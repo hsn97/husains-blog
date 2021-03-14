@@ -18,7 +18,6 @@ const options = {
   renderNode: {
     [BLOCKS.PARAGRAPH]: (node, children) => <Text>{children}</Text>,
     [BLOCKS.EMBEDDED_ASSET]: node => {
-      console.log(node)
       return (
         <img src={node.data.target.fluid.src}/>
       )
@@ -27,7 +26,6 @@ const options = {
 }
 
 const ComponentName = ({data}) => {
-  console.log(data)
 
   // const [value, setValue] = React.useState(0)
   // const {bookTitle, readingTime, bookTitleCard, bookContent} = book[value]

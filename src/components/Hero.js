@@ -5,23 +5,23 @@ import { graphql, useStaticQuery } from "gatsby"
 import SocialLinks from "../constants/socialLinks"
 
 
-const query = graphql`
+const Hero = () => {
+
+  const data = useStaticQuery(
+    graphql`
     {
-      file(relativePath: {eq: "husain-img.png"}) {
-        childImageSharp {
-          fluid {
-            ...GatsbyImageSharpFluid
+      allContentfulAbout {
+        nodes {
+          image {
+            fluid {
+            ...GatsbyContentfulFluid
+            }
           }
         }
       }
     }
   `
-const Hero = () => {
-  const {
-    file: {
-      childImageSharp: {fluid},
-    },
-  } = useStaticQuery(query)
+  )
 
   return(
     <header className="hero">
@@ -38,10 +38,11 @@ const Hero = () => {
         <Image 
         style={{ height: "100%", width: "100%" }}
         imgStyle={{ objectFit: "contain" }}
-        fluid={fluid} className="hero-img"></Image>
+        fluid={data.allContentfulAbout.nodes[0].image.fluid} className="hero-img"></Image>
       </div>
     </header>
   )
 }
+
 
 export default Hero

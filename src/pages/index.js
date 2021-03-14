@@ -10,11 +10,10 @@ import Blogs from "../components/Blogs"
 
 export default ({ data }) => {
 
-  console.log(data)
+
   const {allContentfulBlogPost: { nodes: blogs },
   } = data
 
-  console.log(data)
   
   return (<Layout>
     <Hero />
