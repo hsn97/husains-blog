@@ -13,7 +13,7 @@ module.exports = {
     description: "This is my website",
     author: "@husain",
     twitterUsername: "",
-    image: "/twitter-img.png",
+    image: "",
     siteUrl: "https://testing-strapi-gatsby-build.netlify.app",
   },
   plugins: [
@@ -21,13 +21,6 @@ module.exports = {
     `gatsby-plugin-sharp`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sitemap`,
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `assets`,
-        path: `${__dirname}/src/assets/`,
-      },
-    },
     `gatsby-transformer-remark`,
     {
       resolve: `gatsby-source-contentful`,
